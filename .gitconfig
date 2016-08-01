@@ -1,0 +1,31 @@
+[user]
+    email = brian.t.dawn@gmail.com
+    name = Brian Dawn
+[alias]
+    s = status
+    co = checkout
+    branch-name = "!git rev-parse --abbrev-ref HEAD"
+    # Push the current branch to the remote "origin", and set it to track
+    # the upstream branch
+    publish = "!git push -u origin $(git branch-name)"
+    dag = log --graph --oneline --decorate --date=relative --all
+    d = difftool
+
+[push]
+    default = simple
+[core]
+    editor = vim
+[filter "lfs"]
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+[mergetool]
+    prompt = false
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+
