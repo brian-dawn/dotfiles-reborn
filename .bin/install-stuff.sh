@@ -24,6 +24,7 @@ rm -rf ~/.config/base16-shell
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 
 # Install fisher - yet another fish package manager...
+rm -rf ~/.config/fisherman
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 
 # Install fzf - with fish integration...
@@ -31,6 +32,8 @@ rm -rf ~/.fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 yes | ~/.fzf/install
 
+# Clear fisher cache
+rm -rf ~/.cache/fisherman
 # Install fzf fish plugin.
 fish -c fisher fzf
 fish -c fisher oh-my-fish/chain
