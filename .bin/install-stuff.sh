@@ -36,7 +36,8 @@ yes | ~/.fzf/install
 rm -rf ~/.cache/fisherman
 # Install fzf fish plugin.
 fish -c fisher fzf
-fish -c fisher oh-my-fish/chain
+fish -c fisher install hauleth/agnoster
+
 
 ###################
 #     Cleanup     #
