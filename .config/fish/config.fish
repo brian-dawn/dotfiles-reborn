@@ -75,3 +75,23 @@ end
 #######################
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles-repo/ --work-tree=$HOME'
 config config status.showUntrackedFiles no
+set fish_color_autosuggestion 505050 fda331
+set fish_color_command 6fb3d2 d381c3
+set fish_color_comment fb0120
+set fish_color_cwd a1c659
+set fish_color_cwd_root fb0120
+set fish_color_error fb0120 --bold
+set fish_color_escape 76c7b7
+set fish_color_history_current 76c7b7
+set fish_color_match 76c7b7
+set fish_color_normal e0e0e0
+set fish_color_operator 76c7b7
+set fish_color_param 6fb3d2 76c7b7
+set fish_color_quote b3643c
+set fish_color_redirection e0e0e0
+set fish_color_search_match --background=303030
+set fish_color_selection --background=303030
+set fish_pager_color_completion e0e0e0
+set fish_pager_color_description 505050 fda331
+set fish_pager_color_prefix 76c7b7
+set fish_pager_color_progress 76c7b7

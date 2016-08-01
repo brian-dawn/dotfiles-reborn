@@ -7,6 +7,9 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Install emacs pkg management
 curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
+cd ~/.emacs.d
+cask
+cd -
 
 # Install vim pkg management
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -30,6 +33,7 @@ yes | ~/.fzf/install
 
 # Install fzf fish plugin.
 fish -c fisher fzf
+fish -c fisher oh-my-fish/chain
 
 ###################
 #     Cleanup     #
@@ -39,5 +43,3 @@ echo 'Cleanup!'
 # Cleanup modifications made by the various installs.
 /usr/bin/git --git-dir=$HOME/.dotfiles-repo/ --work-tree=$HOME checkout ~/.bashrc
 
-rm -rf ~/.config/fish
-/usr/bin/git --git-dir=$HOME/.dotfiles-repo/ --work-tree=$HOME checkout ~/.config/fish
