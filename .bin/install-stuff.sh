@@ -1,3 +1,4 @@
+#!/bin/bash
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles-repo/ --work-tree=$HOME'
 
 curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
