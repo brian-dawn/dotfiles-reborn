@@ -129,3 +129,10 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 
+" airline configuration.
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+set laststatus=2
+set noshowmode
+set ttimeoutlen=50
+
