@@ -36,7 +36,7 @@ yes | ~/.fzf/install
 rm -rf ~/.cache/fisherman
 # Install fzf fish plugin.
 fish -c fisher fzf
-fish -c fisher install mono
+fish -c fisher install simple
 
 
 ###################
