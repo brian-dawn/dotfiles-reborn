@@ -49,7 +49,7 @@ kwmc bindsym hyper-h window -f west
 */
 
 // Set default values for screen padding
-kwmc config padding 20 20 20 20
+kwmc config padding 40 40 40 40
 
 // Set default values for container gaps
 kwmc config gap 15 15
@@ -137,13 +137,16 @@ kwmc mode prefix color 0xFF458588
 
 /*  Default Keybinds */
 // Activate prefix mode
-kwmc bindsym ctrl-s mode activate prefix
+kwmc bindsym cmd+alt-s mode activate prefix
 
 // Quit Kwm
 kwmc bindsym cmd+alt+ctrl-q quit
 
 // Launch iTerm2
-kwmc bindsym cmd-return exec open -na /Applications/iTerm2.app
+kwmc bindsym cmd-return exec open -na /Applications/iTerm.app
+kwmc bindsym ctrl-return exec open -na /Applications/iTerm.app
+kwmc bindsym ctrl+return exec open -na /Applications/iTerm.app
+kwmc bindsym cmd+return exec open -na /Applications/iTerm.app
 
 // Set Space Tiling Mode To BSP
 kwmc bindsym cmd+ctrl-a space -t bsp
