@@ -26,6 +26,7 @@ Now on new machines we can clone with:
 ```
 git clone --separate-git-dir=$HOME/.dotfiles-repo /path/to/repo $HOME/myconf-tmp
 cp ~/myconf-tmp/.gitmodules ~  # If you use Git submodules
+cp ~/myconf-tmp ~
 rm -r ~/myconf-tmp/
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles-repo/ --work-tree=$HOME'
 ```
