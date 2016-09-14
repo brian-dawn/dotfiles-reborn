@@ -6,6 +6,7 @@ function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'neomake/neomake'
 
 " JS
 Plug 'pangloss/vim-javascript'
@@ -17,6 +18,12 @@ Plug 'zchee/deoplete-jedi'
 " Elixir
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
+
+" Rust
+" NOTE: need to cargo install racer
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
+
 
 Plug 'tomtom/tcomment_vim'
 Plug 'bling/vim-airline'
@@ -85,6 +92,11 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 """""""""""""""""""""""""""""""""""""""""
+" Neomake
+"""""""""""""""""""""""""""""""""""""""""
+"autocmd! BufWritePost * Neomake
+
+"""""""""""""""""""""""""""""""""""""""""
 " DEOPLETE
 """""""""""""""""""""""""""""""""""""""""
 
@@ -92,6 +104,14 @@ nmap ga <Plug>(EasyAlign)
 let g:deoplete#enable_at_startup = 1
 " Use smartcase.
 let g:deoplete#enable_smart_case = 1
+
+let g:deoplete#auto_completion_start_length = 0
+
+let g:deoplete#sources#rust#racer_binary='~/.cargo/bin/racer'
+let g:deoplete#sources#rust#rust_source_path='~/repos/rust/src'
+
+let g:racer_cmd = "~/.cargo/bin/racer"
+let $RUST_SRC_PATH = "~/repos/rust"
 
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"

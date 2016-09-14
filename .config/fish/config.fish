@@ -3,7 +3,7 @@
 ####################
 
 function add_to_path --description 'Persistently prepends paths to your PATH'
-  set --universal fish_user_paths $fish_user_paths $argv
+  set -x PATH $argv $PATH
 end
 
 #########################
@@ -15,6 +15,9 @@ set -x TERM xterm-256color
 
 # Golang
 set -x GOPATH $HOME/.go
+
+# Rust
+set -x CARGO_HOME $HOME/.cargo
 
 ###########
 # Aliases #
@@ -47,6 +50,9 @@ add_to_path $HOME/.cask/bin
 
 # Golang
 add_to_path $GOPATH/bin
+
+# Rust
+add_to_path $HOME/.cargo/bin
 
 ################
 # Custom Theme #

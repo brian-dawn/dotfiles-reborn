@@ -1,3 +1,4 @@
+# Managing the configs
 
 To initialize I ran:
 ```
@@ -30,3 +31,10 @@ cp ~/myconf-tmp ~
 rm -r ~/myconf-tmp/
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles-repo/ --work-tree=$HOME'
 ```
+
+# Usability
+
+## tmux
+
+## kwm
+

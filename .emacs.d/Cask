@@ -56,3 +56,5 @@
 (depends-on "geiser") ;; Chicken scheme!!
 (depends-on "alchemist") ;; Elixir
 
+(depends-on "rust-mode")
+(depends-on "racer")

@@ -78,7 +78,7 @@ kwmc config center-on-float on
 
 /* The mouse will automatically move to the center
    of the focused window */
-kwmc config mouse-follows-focus on
+kwmc config mouse-follows-focus off
 
 // Allow window focus to wrap-around
 kwmc config cycle-focus on
