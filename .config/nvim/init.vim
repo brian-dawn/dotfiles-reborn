@@ -36,8 +36,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/goyo.vim'
 
-
-
 " Themes
 Plug 'flazz/vim-colorschemes'
 Plug 'chriskempson/base16-vim'

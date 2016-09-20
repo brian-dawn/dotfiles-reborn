@@ -1,7 +1,6 @@
 ####################
 # Custom Functions #
 ####################
-
 function add_to_path --description 'Persistently prepends paths to your PATH'
   set -x PATH $argv $PATH
 end
@@ -37,13 +36,17 @@ alias emacs 'emacs -nw'
 
 alias vim 'nvim'
 
+# Haskell
+alias ghc='stack exec -- ghc'
+alias ghci='stack exec -- ghci'
+
 ######################
 # Path Modifications #
 ######################
 
-add_to_path $HOME/.local/bin
 add_to_path $HOME/.bin
 add_to_path /usr/local/bin
+add_to_path $HOME/kidblog/kb-api-server/scripts/bin
 
 # Emacs
 add_to_path $HOME/.cask/bin
@@ -53,6 +56,10 @@ add_to_path $GOPATH/bin
 
 # Rust
 add_to_path $HOME/.cargo/bin
+
+# Haskell/stack
+add_to_path $HOME/.cabal/bin
+add_to_path $HOME/.local/bin # prefer stack
 
 ################
 # Custom Theme #

@@ -19,7 +19,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Color themes.
-(load-theme 'base16-tomorrow-dark t)
+(load-theme 'base16-tomorrow t)
 
 ;; Remote the GUI stuff.
 (tool-bar-mode -1)
@@ -33,42 +33,9 @@
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (global-set-key (kbd "C-c C-g") 'ace-window)
 
-;; Rust stuff
-(setq racer-rust-src-path "~/repos/rust/src/")
-(add-hook 'rust-mode-hook #'racer-mode)
-(add-hook 'racer-mode-hook #'eldoc-mode)
-(add-hook 'racer-mode-hook #'company-mode)
-
-;; Haskell stuff
-(let ((my-cabal-path (expand-file-name "~/.cabal/bin")))
-  (setenv "PATH" (concat my-cabal-path ":" (getenv "PATH")))
-  (add-to-list 'exec-path my-cabal-path))
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-   ["#1d1f21" "#cc6666" "#b5bd68" "#f0c674" "#81a2be" "#b294bb" "#81a2be" "#c5c8c6"])
- '(ansi-term-color-vector
-   [unspecified "#1d1f21" "#cc6666" "#b5bd68" "#f0c674" "#81a2be" "#b294bb" "#81a2be" "#c5c8c6"])
- '(cider-auto-test-mode t)
- '(custom-enabled-themes (quote (base16-tomorrow-dark)))
- '(custom-safe-themes
-   (quote
-    ("1a2b131a7844bad234832963d565097efc88111b196fb75757885c159c5f8137" "a7b47876e5da7cac6f5e61cca7a040a365ca2c498823654bd4076add8edf34c5" "e8bba3c8e8caea2c7a8b6932b0db8d9bdb468c9b44bf554f37b56093d23fde57" "aed73c6d0afcf2232bb25ed2d872c7a1c4f1bda6759f84afc24de6a1aec93da8" "b6db49cec08652adf1ff2341ce32c7303be313b0de38c621676122f255ee46db" "232f715279fc131ed4facf6a517b84d23dca145fcc0e09c5e0f90eb534e1680f" "e033c4abd259afac2475abd9545f2099a567eb0e5ec4d1ed13567a77c1919f8f" "e254f8e18ba82e55572c5e18f3ac9c2bd6728a7e500f6cc216e0c6f6f8ea7003" "b1bcb837df0455af8e91114b7a3bddfa084cde32ceb16b1b468d5e5e8605a835" "91fba9a99f7b64390e1f56319c3dbbaed22de1b9676b3c73d935bf62277b799c" "50e7f9d112e821e42bd2b8410d50de966c35c7434dec12ddea99cb05dd368dd8" "9e87bddff84cbce28c01fa05eb22f986d770628fa202cd5ca0cd7ed53db2f068" "f21caace402180ab3dc5157d2bb843c4daafbe64aadc362c9f4558ac17ce43a2" "1462969067f2ff901993b313085d47e16badeec58b63b9ed67fa660cebaaddae" "75c0b9f9f90d95ac03f8647c75a91ec68437c12ff598e2abb22418cd4b255af0" "bf81a86f9cfa079a7bb9841bc6ecf9a2e8999b85e4ae1a4d0138975921315713" "f245c9f24b609b00441a6a336bcc556fe38a6b24bfc0ca4aedd4fe23d858ba31" "1dfd7a150e80fdb4563f594716d09d849f4c50bcea12825bd8d284c05a87a3e1" "3a3917dbcc6571ef3942c2bf4c4240f70b5c4bc0b28192be6d3f9acd83607a24" "abb628b7ecdc570350db589ea22f8ae0f4b9e5304ea313532acbb84d703eecbd" "2162da67ce86c514aff010de1b040fb26663ca42afebc2de26515d741121c435" default)))
- '(haskell-stylish-on-save t))
-(add-hook 'haskell-mode-hook #'haskell-doc-mode)
-
-
-;; Pixie lang
-(add-hook 'pixie-mode-hook #'inf-clojure-minor-mode)
-
 ;; Clojure stuff
 (require 'exec-path-from-shell)
 (exec-path-from-shell-initialize)
-
 
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
@@ -85,6 +52,7 @@
 
 ;; Clojure/Hoplon
 (add-to-list 'auto-mode-alist '("\\.cljs\\.hl\\'" . clojurescript-mode))
+
 
 ;; Paredit
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -166,12 +134,10 @@
 (add-hook 'clojure-mode-hook #'my-clojure-mode-hook)
 
 
+;; Haskell stuff
+(add-hook 'haskell-mode-hook 'intero-mode)
 
-;; Elm stuff
-(add-hook 'flycheck-mode-hook 'flycheck-elm-setup)
-(with-eval-after-load 'flycheck '(add-hook 'flycheck-mode-hook #'flycheck-elm-setup))
-(add-hook 'elm-mode-hook #'elm-oracle-setup-completion)
-(add-hook 'elm-mode-hook (lambda () (setq company-backends '(company-elm))))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; CUSTOM FUNCTIONS
@@ -205,9 +171,21 @@ the focus."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(company-scrollbar-bg ((t (:background "#191919"))))
- '(company-scrollbar-fg ((t (:background "#0c0c0c"))))
- '(company-tooltip ((t (:inherit default :background "#050505"))))
+ '(company-scrollbar-bg ((t (:background "#ffffff"))))
+ '(company-scrollbar-fg ((t (:background "#ffffff"))))
+ '(company-tooltip ((t (:inherit default :background "#ffffff"))))
  '(company-tooltip-common ((t (:inherit font-lock-constant-face))))
  '(company-tooltip-selection ((t (:inherit font-lock-function-name-face)))))
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#1f2022" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#4f97d7" "#a3a3a3"])
+ '(ansi-term-color-vector
+   [unspecified "#1f2022" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#4f97d7" "#a3a3a3"])
+ '(custom-safe-themes
+   (quote
+    ("9be1d34d961a40d94ef94d0d08a364c3d27201f3c98c9d38e36f10588469ea57" "0c3b1358ea01895e56d1c0193f72559449462e5952bded28c81a8e09b53f103f" "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" default))))
