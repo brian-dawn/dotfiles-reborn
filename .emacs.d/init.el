@@ -26,6 +26,9 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 
+;; highlight matching paren
+(show-paren-mode 1)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Plugin enabling/configuring.
 ;;;;;;;;;;;;;;;;;;;;;;;;
@@ -38,10 +41,6 @@
 ;; disable ido faces to see flx highlights.
 (setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)
-
-;; FZF
-(global-set-key (kbd "C-c p f") 'fzf)
-
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (global-set-key (kbd "C-c C-g") 'ace-window)

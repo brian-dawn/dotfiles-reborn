@@ -53,4 +53,3 @@
 
 (depends-on "alchemist") ;; Elixir
 
-(depends-on "fzf")
