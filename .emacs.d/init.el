@@ -30,6 +30,19 @@
 ;; Plugin enabling/configuring.
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Fix ido - better fuzzying for projectile and friends
+(require 'flx-ido)
+(ido-mode 1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+;; disable ido faces to see flx highlights.
+(setq ido-enable-flex-matching t)
+(setq ido-use-faces nil)
+
+;; FZF
+(global-set-key (kbd "C-c p f") 'fzf)
+
+
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (global-set-key (kbd "C-c C-g") 'ace-window)
 
@@ -185,7 +198,7 @@ the focus."
  '(ansi-color-names-vector
    ["#1f2022" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#4f97d7" "#a3a3a3"])
  '(ansi-term-color-vector
-   [unspecified "#1f2022" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#4f97d7" "#a3a3a3"])
+   [unspecified "#1f2022" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#4f97d7" "#a3a3a3"] t)
  '(custom-safe-themes
    (quote
-    ("9be1d34d961a40d94ef94d0d08a364c3d27201f3c98c9d38e36f10588469ea57" "0c3b1358ea01895e56d1c0193f72559449462e5952bded28c81a8e09b53f103f" "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" default))))
+    ("ffe80c88e3129b2cddadaaf78263a7f896d833a77c96349052ad5b7753c0c5a5" "e1498b2416922aa561076edc5c9b0ad7b34d8ff849f335c13364c8f4276904f0" "ef04dd1e33f7cbd5aa3187981b18652b8d5ac9e680997b45dc5d00443e6a46e3" "3de3f36a398d2c8a4796360bfce1fa515292e9f76b655bb9a377289a6a80a132" "a85e40c7d2df4a5e993742929dfd903899b66a667547f740872797198778d7b5" "c968804189e0fc963c641f5c9ad64bca431d41af2fb7e1d01a2a6666376f819c" "8543b328ed10bc7c16a8a35c523699befac0de00753824d7e90148bca583f986" "25c242b3c808f38b0389879b9cba325fb1fa81a0a5e61ac7cae8da9a32e2811b" "9be1d34d961a40d94ef94d0d08a364c3d27201f3c98c9d38e36f10588469ea57" "0c3b1358ea01895e56d1c0193f72559449462e5952bded28c81a8e09b53f103f" "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" default))))

@@ -25,6 +25,8 @@
 (depends-on "use-package")
 (depends-on "web-mode")
 (depends-on "yasnippet")
+(depends-on "flx")
+(depends-on "flx-ido")
 
 ;; Clojure
 (depends-on "clojure-mode")
@@ -40,7 +42,6 @@
 
 (depends-on "ace-jump-mode")
 (depends-on "ace-window")
-(depends-on "projectile")
 (depends-on "exec-path-from-shell")
 
 ;; Haskell
@@ -52,3 +53,4 @@
 
 (depends-on "alchemist") ;; Elixir
 
+(depends-on "fzf")
