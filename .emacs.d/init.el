@@ -68,8 +68,6 @@
 ;; Clojure/Hoplon
 (add-to-list 'auto-mode-alist '("\\.cljs\\.hl\\'" . clojurescript-mode))
 ;; Have cider always save a file when it's loaded in the repl.
-(setq cider-prompt-save-file-on-load 'always-save)
-
 
 ;; Paredit
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -91,7 +89,11 @@
 (global-set-key (kbd "C-c C-s") 'paredit-forward-slurp-sexp)
 
 (setq cider-repl-use-pretty-printing t)
+(setq cider-prompt-for-symbol nil)
 (setq cider-auto-test-mode t)
+(setq cider-prompt-save-file-on-load 'always-save)
+(setq nrepl-hide-special-buffers t)
+(add-hook 'cider-mode-hook #'eldoc-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -118,6 +120,9 @@
 
 (require 'ido)
 (ido-mode t)
+(setq ido-everywhere t)
+(require 'ido-ubiquitous)
+(ido-ubiquitous-mode 1)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

@@ -27,6 +27,7 @@
 (depends-on "yasnippet")
 (depends-on "flx")
 (depends-on "flx-ido")
+(depends-on "ido-ubiquitous")
 
 (depends-on "atom-one-dark-theme")
 
