@@ -28,6 +28,8 @@
 (depends-on "flx")
 (depends-on "flx-ido")
 
+(depends-on "atom-one-dark-theme")
+
 ;; Clojure
 (depends-on "clojure-mode")
 (depends-on "cider")
