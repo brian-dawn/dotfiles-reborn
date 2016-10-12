@@ -29,23 +29,26 @@
 (depends-on "flx-ido")
 (depends-on "ido-ubiquitous")
 
+;; Misc
 (depends-on "atom-one-dark-theme")
+(depends-on "base16-theme")
+(depends-on "smex")
+(depends-on "multiple-cursors")
+(depends-on "company")
+(depends-on "smooth-scrolling")
+(depends-on "evil")
+
+;; ace
+(depends-on "ace-jump-mode")
+(depends-on "ace-window")
+(depends-on "exec-path-from-shell")
 
 ;; Clojure
 (depends-on "clojure-mode")
 (depends-on "cider")
 (depends-on "clj-refactor")
 (depends-on "paredit")
-
-(depends-on "base16-theme")
 (depends-on "rainbow-delimiters")
-(depends-on "smex")
-(depends-on "multiple-cursors")
-(depends-on "company")
-
-(depends-on "ace-jump-mode")
-(depends-on "ace-window")
-(depends-on "exec-path-from-shell")
 
 ;; Haskell
 (depends-on "haskell-mode")
@@ -54,6 +57,10 @@
 
 (depends-on "markdown-mode")
 
-(depends-on "alchemist") ;; Elixir
+;; Elixir
+(depends-on "alchemist")
 
-(depends-on "smooth-scrolling")
+;; Python
+(depends-on "python-mode")
+(depends-on "elpy")
+
