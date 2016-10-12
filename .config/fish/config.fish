@@ -40,6 +40,9 @@ alias vim 'nvim'
 alias ghc='stack exec -- ghc'
 alias ghci='stack exec -- ghci'
 
+# Clojure stuff
+alias cljfmt='git diff --name-only | xargs lein cljfmt fix'
+
 ######################
 # Path Modifications #
 ######################
