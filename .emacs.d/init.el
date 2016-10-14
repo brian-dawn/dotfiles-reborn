@@ -39,6 +39,9 @@
 ;; highlight matching paren
 (show-paren-mode 1)
 
+;; Make mouse scrolling more comfortable.
+(setq mouse-wheel-progressive-speed nil)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Plugin enabling/configuring.
 ;;;;;;;;;;;;;;;;;;;;;;;;

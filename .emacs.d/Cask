@@ -64,3 +64,4 @@
 (depends-on "python-mode")
 (depends-on "elpy")
 
+(depends-on "neotree")
