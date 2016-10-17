@@ -42,6 +42,9 @@
 ;; Make mouse scrolling more comfortable.
 (setq mouse-wheel-progressive-speed nil)
 
+;; No bell.
+(setq ring-bell-function 'ignore)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Plugin enabling/configuring.
 ;;;;;;;;;;;;;;;;;;;;;;;;
