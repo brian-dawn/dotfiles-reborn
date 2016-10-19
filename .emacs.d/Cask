@@ -64,4 +64,8 @@
 (depends-on "python-mode")
 (depends-on "elpy")
 
+;; dotnet
+(depends-on "csharp-mode")
+(depends-on "omnisharp")
+
 (depends-on "neotree")
