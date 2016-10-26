@@ -125,6 +125,6 @@ export PATH=/usr/local/sbin:$PATH
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # Apply color theme...
-sh ~/.config/base16-shell/scripts/base16-mocha.sh
+sh ~/.bin/one-dark.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
