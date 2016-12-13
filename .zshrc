@@ -52,6 +52,7 @@ alias pxi=pixie-vm
 # Emacs
 export PATH=$PATH:$HOME/.cask/bin
 alias emacs="emacs -nw"
+alias nmacs="open -n /Applications/Emacs.app"
 
 # Linux brew
 export PATH=$HOME/.linuxbrew/bin:$PATH

@@ -63,6 +63,7 @@
 ;; Python
 (depends-on "python-mode")
 (depends-on "elpy")
+(depends-on "jedi")
 
 ;; dotnet
 (depends-on "csharp-mode")
