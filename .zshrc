@@ -34,8 +34,6 @@ export TERM=xterm-256color
 export PKG_CONFIG_PATH="/usr/X11/lib/pkgconfig"
 export SHELL=/bin/zsh
 
-export GREP_OPTIONS='--color=always'
-
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$PATH:~/.bin
 export PATH=/usr/local/bin:$PATH

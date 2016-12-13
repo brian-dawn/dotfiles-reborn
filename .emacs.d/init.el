@@ -80,6 +80,8 @@
              (eldoc-mode 1)
              (rainbow-delimiters-mode 1)))
 
+(setq cider-cljs-lein-repl "(start-repl)")
+
 ;; Clojure/Hoplon
 (add-to-list 'auto-mode-alist '("\\.cljs\\.hl\\'" . clojurescript-mode))
 ;; Have cider always save a file when it's loaded in the repl.
