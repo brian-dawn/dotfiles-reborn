@@ -39,7 +39,7 @@
 (depends-on "evil")
 
 ;; ace
-(depends-on "ace-jump-mode")
+(depends-on "avy")
 (depends-on "ace-window")
 (depends-on "exec-path-from-shell")
 
