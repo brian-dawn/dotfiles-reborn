@@ -61,6 +61,7 @@
 ;; Clojure stuff
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+
 (require 'exec-path-from-shell)
 (exec-path-from-shell-initialize)
 
@@ -115,6 +116,8 @@
     (cljr-add-keybindings-with-prefix "C-c C-m"))
 
 (add-hook 'clojure-mode-hook #'my-clojure-mode-hook)
+
+                 
 
 ;; CUSTOM FUNCTIONS
 
@@ -212,6 +215,36 @@ the focus."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; CUSTOM FUNCTIONS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defun clojure/fancify-symbols (mode)
+  "Pretty symbols for Clojure's anonymous functions and sets,
+   like (λ [a] (+ a 5)), ƒ(+ % 5), and ∈{2 4 6}."
+  (font-lock-add-keywords mode
+    `(("(\\(fn\\)[\[[:space:]]"
+       (0 (progn (compose-region (match-beginning 1)
+                                 (match-end 1) "λ"))))
+      ("(\\(partial\\)[\[[:space:]]"
+       (0 (progn (compose-region (match-beginning 1)
+                                 (match-end 1) "Ƥ"))))
+
+      ("(\\(comp\\)[\[[:space:]]"
+       (0 (progn (compose-region (match-beginning 1)
+                                 (match-end 1) "∘"))))
+      ("\\(#\\)("
+       (0 (progn (compose-region (match-beginning 1)
+                                 (match-end 1) "ƒ"))))
+
+      ("\\(#\\){"
+       (0 (progn (compose-region (match-beginning 1)
+                                 (match-end 1) "∈")))))))
+
+
+(clojure/fancify-symbols 'cider-repl-mode)
+(clojure/fancify-symbols 'cider-clojure-interaction-mode)
+
+(dolist (m '(clojure-mode clojurescript-mode clojurec-mode clojurex-mode))
+    (clojure/fancify-symbols m))
+
 (defun spacemacs//cider-eval-in-repl-no-focus (form)
    "Insert FORM in the REPL buffer and eval it."
    (while (string-match "\\`[ \t\n\r]+\\|[ \t\n\r]+\\'" form)
@@ -273,4 +306,30 @@ the focus."
 
 ;; Color themes.
 (load-theme 'atom-one-dark t)
+
+
+;; Fancy symbols
+;(defvar endless/clojure-prettify-alist '())
+;(add-to-list 'endless/clojure-prettify-alist
+;             '(">=" . "≥"))
+;(add-to-list 'endless/clojure-prettify-alist
+;             '("<=" . "≤"))
+;(add-to-list 'endless/clojure-prettify-alist
+;             '("->" . (?- (Br . Bc) ?- (Br . Bc) ?>)))
+;(add-to-list 'endless/clojure-prettify-alist
+;             '("->>" .  (?\s (Br . Bl) ?\s (Br . Bl) ?\s
+;                             (Bl . Bl) ?- (Bc . Br) ?- (Bc . Bc) ?>
+;                             (Bc . Bl) ?- (Br . Br) ?>)))
+;(add-to-list 'endless/clojure-prettify-alist
+;             '("partial" . "Ƥ"))
+;(add-to-list 'endless/clojure-prettify-alist
+;             '("#{" . "∈{"))
+;(add-to-list 'endless/clojure-prettify-alist
+;             '("#(" . "λ("))
+;(eval-after-load 'clojure-mode
+;  '(setq clojure--prettify-symbols-alist
+;         (append endless/clojure-prettify-alist
+;                 clojure--prettify-symbols-alist)))
+
+;(add-hook 'clojure-mode-hook 'prettify-symbols-mode)
 
