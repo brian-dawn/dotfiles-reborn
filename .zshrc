@@ -72,8 +72,7 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 
 # RUST
 source $HOME/.cargo/env
-export RUST_SRC_PATH=$HOME/repos/rust/src
-
+export RUST_SRC_PATH=$HOME/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
 # C++
 alias clang++='clang++ -Wall -Werror -Wextra -Wno-c++11-extensions -std=c++11 -stdlib=libc++'
 

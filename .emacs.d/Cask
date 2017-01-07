@@ -60,6 +60,12 @@
 ;; Elixir
 (depends-on "alchemist")
 
+;; Rust
+(depends-on "rust-mode")
+(depends-on "racer")
+(depends-on "flycheck-rust")
+
+
 ;; Python
 (depends-on "python-mode")
 (depends-on "elpy")

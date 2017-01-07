@@ -269,8 +269,25 @@ the focus."
      'spacemacs/cider-send-function-to-repl))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; RUST
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(add-hook 'rust-mode-hook #'racer-mode)
+(add-hook 'racer-mode-hook #'eldoc-mode)
+
+(add-hook 'racer-mode-hook #'company-mode)
+
+(require 'rust-mode)
+(define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
+(setq company-tooltip-align-annotations t)
+(add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+(rust-enable-format-on-save)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; PYTHON
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (add-hook 'python-mode-hook 'elpy-enable)
 (add-hook 'python-mode-hook 'elpy-mode)
 (add-hook 'python-mode-hook 'jedi:setup)
