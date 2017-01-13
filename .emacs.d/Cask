@@ -37,6 +37,7 @@
 (depends-on "company")
 (depends-on "smooth-scrolling")
 (depends-on "evil")
+(depends-on "evil-easymotion")
 
 ;; ace
 (depends-on "avy")

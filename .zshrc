@@ -117,8 +117,6 @@ alias bd-git-head-changed-files='git diff-tree --no-commit-id --name-only -r HEA
 alias bd-dot-make-links='python ~/.bin/makelinks.py'
 alias bd-dot-add-submodule='python ~/.bin/add-submodule.py'
 
-alias vim=nvim
-
 # Docker aliases
 alias docker-kill-all='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 alias docker-kill-exited="docker ps -a | awk '/Exit/ {print $1}' | xargs docker rm"
