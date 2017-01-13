@@ -324,7 +324,7 @@ the focus."
 ;; Color themes.
 (load-theme 'atom-one-dark t)
 
-
+(evil-mode 0)
 ;; Fancy symbols
 ;(defvar endless/clojure-prettify-alist '())
 ;(add-to-list 'endless/clojure-prettify-alist
