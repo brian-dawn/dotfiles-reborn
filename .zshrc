@@ -72,7 +72,12 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 
 # RUST
 source $HOME/.cargo/env
-export RUST_SRC_PATH=$HOME/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
+if [ "$(uname)" == "Darwin" ]; then
+    export RUST_SRC_PATH=~/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    export RUST_SRC_PATH=$HOME/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
+fi
+
 # C++
 alias clang++='clang++ -Wall -Werror -Wextra -Wno-c++11-extensions -std=c++11 -stdlib=libc++'
 
