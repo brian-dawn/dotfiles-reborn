@@ -70,6 +70,9 @@ export PATH=$HOME/.cabal/bin:$PATH
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH=/usr/local/opt/ruby/bin:$PATH
 
+# JS
+export PATH="$PATH:`yarn global bin`"
+
 # RUST
 source $HOME/.cargo/env
 case `uname` in
