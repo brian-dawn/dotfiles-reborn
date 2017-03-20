@@ -132,6 +132,10 @@ export PATH=/usr/local/sbin:$PATH
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+
+# Vim on OSX
+alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+
 # Apply color theme...
 sh ~/.bin/one-dark.sh
 
