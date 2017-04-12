@@ -136,6 +136,9 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Vim on OSX
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 
+# Disable cding into a directory just by typing it
+unsetopt auto_cd
+
 # Apply color theme...
 sh ~/.bin/one-dark.sh
 
