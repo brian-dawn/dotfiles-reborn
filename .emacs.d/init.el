@@ -285,6 +285,16 @@ the focus."
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; MIT-SCHEME
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Geiser check
+(add-hook 'scheme-mode-hook 'geiser-mode)
+(setq geiser-default-implementation 'mit)
+;; Get around geiser bug not associating repls with buffers.
+(setq geiser-active-implementations '(mit))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; PYTHON
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
