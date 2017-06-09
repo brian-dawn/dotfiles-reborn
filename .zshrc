@@ -55,9 +55,6 @@ alias nmacs="open -n /Applications/Emacs.app"
 # Linux brew
 export PATH=$HOME/.linuxbrew/bin:$PATH
 
-# FSharp
-alias fsharpi="rlwrap fsharpi --readline-"
-
 # Golang
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
