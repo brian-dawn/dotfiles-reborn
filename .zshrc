@@ -81,6 +81,8 @@ case `uname` in
   ;;
 esac
 
+# Latex
+export PATH=$PATH:/Library/TeX/texbin
 
 # C++
 alias clang++='clang++ -Wall -Werror -Wextra -Wno-c++11-extensions -std=c++11 -stdlib=libc++'
@@ -142,5 +144,8 @@ function ag-replace () {
 
 # Apply color theme...
 sh ~/.bin/one-dark.sh
+
+source $HOME/.nix-profile/etc/profile.d/nix.sh
+export NIX_PATH="nixpkgs=$HOME/.nix-defexpr/channels/nixos-16.03"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
