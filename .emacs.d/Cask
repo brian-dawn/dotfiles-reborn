@@ -77,3 +77,9 @@
 (depends-on "omnisharp")
 
 (depends-on "neotree")
+
+;; Schemes
+(depends-on "racket-mode")
+(depends-on "geiser")
+
+(depends-on "idris-mode")
