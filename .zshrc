@@ -131,6 +131,7 @@ export PATH=/usr/local/sbin:$PATH
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+alias az=azure
 
 # Vim on OSX
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
