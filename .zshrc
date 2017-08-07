@@ -98,6 +98,9 @@ export MAVEN_OPTS='-Xmx1024m -XX:MaxDirectMemorySize=1024m -XX:MaxPermSize=256m'
 # Git completion.
 autoload -U compinit && compinit
 
+# Make xclip be pbcopy
+alias xclip="xclip -selection c"
+
 # Awful person aliases
 alias ..='cd ..'
 alias ../..='cd ../..'
@@ -133,9 +136,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 alias az=azure
 
-# Vim on OSX
-alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
-
 # Disable cding into a directory just by typing it
 unsetopt auto_cd
 
@@ -145,8 +145,5 @@ function ag-replace () {
 
 # Apply color theme...
 sh ~/.bin/one-dark.sh
-
-source $HOME/.nix-profile/etc/profile.d/nix.sh
-export NIX_PATH="nixpkgs=$HOME/.nix-defexpr/channels/nixos-16.03"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
