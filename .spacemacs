@@ -31,10 +31,12 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     html
      sql
      javascript
      haskell
      clojure
+     (c-c++ :variables c-c++-enable-clang-support t)
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -319,6 +321,12 @@ you should place your code here."
   (setq cider-repl-use-pretty-printing t)
   (setq cider-save-file-on-load t)
   (setq mouse-autoselect-window t)
+
+  (require 'cider)
+  (setq cider-cljs-lein-repl
+        "(do (require 'figwheel-sidecar.repl-api)
+             (figwheel-sidecar.repl-api/start-figwheel!)
+             (figwheel-sidecar.repl-api/cljs-repl))")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
