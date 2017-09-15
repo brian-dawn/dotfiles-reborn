@@ -5,5 +5,8 @@
     "clang.cxxflags": [
         "-std=c++14"
     ],
-    "vim.easymotion": true
+    "vim.easymotion": true,
+    "vim.leader": "<space>",
+    "vim.easymotionMarkerFontFamily": "Source Code Pro",
+    "vim.useSystemClipboard": true
 }
