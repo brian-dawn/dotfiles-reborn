@@ -1,0 +1,9 @@
+{
+    "vim.disableAnnoyingNeovimMessage": true,
+    "workbench.colorTheme": "Atom One Dark",
+    "editor.fontFamily": "Source Code Pro",
+    "clang.cxxflags": [
+        "-std=c++14"
+    ],
+    "vim.easymotion": true
+}
