@@ -36,7 +36,9 @@ values."
      javascript
      haskell
      clojure
+     ;;ycmd
      (c-c++ :variables c-c++-enable-clang-support t)
+     ;;(c-c++)
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -321,6 +323,8 @@ you should place your code here."
   (setq cider-repl-use-pretty-printing t)
   (setq cider-save-file-on-load t)
   (setq mouse-autoselect-window t)
+
+  (set-variable 'ycmd-server-command '("/usr/bin/ycmd"))
 
   (require 'cider)
   (setq cider-cljs-lein-repl

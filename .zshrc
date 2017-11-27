@@ -70,6 +70,9 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 # JS
 export PATH="$PATH:`yarn global bin`"
 
+# Cuda
+export PATH=/usr/local/cuda-8.0/bin:$PATH
+
 # RUST
 source $HOME/.cargo/env
 case `uname` in
@@ -142,6 +145,8 @@ unsetopt auto_cd
 function ag-replace () {
   ag $1 --files-with-matches | xargs -I {} sed -i '.back' -e "s/$1/$2/g" {}
 }
+
+source ~/.nix-profile/etc/profile.d/nix.sh
 
 # Apply color theme...
 sh ~/.bin/one-dark.sh
