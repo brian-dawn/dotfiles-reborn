@@ -1,15 +1,6 @@
 
-#exec_always --no-startup-id xfce4-session
-
-#exec --no-startup-id xfce4-panel --disable-wm-check
-
-#exec_always --no-startup-id xfce4-power-manager
-
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 exec_always --no-startup-id gnome-power-manager 
-# i3 config file (v4)
-#
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
 
@@ -152,4 +143,13 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 new_window 1pixel
+default_border none
+gaps inner 10
+gaps outer 0
 
+bar {
+  status_command i3status
+}
+
+
+output "*" background ~/Dropbox/Images/HD/wallhaven-243289.jpg stretch
