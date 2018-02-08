@@ -1,6 +1,6 @@
 ;;; init.el --- Spacemacs Initialization File
 ;;
-;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2018 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -16,18 +16,20 @@
 ;; lower value in your dotfile (function `dotspacemacs/user-config')
 (setq gc-cons-threshold 100000000)
 
-(defconst spacemacs-version          "0.200.9" "Spacemacs version.")
-(defconst spacemacs-emacs-min-version   "24.4" "Minimal version of Emacs.")
+(load-file (concat (file-name-directory load-file-name)
+                   "core/core-versions.el"))
+(load-file (concat (file-name-directory load-file-name)
+                   "core/core-load-paths.el"))
 
 (if (not (version<= spacemacs-emacs-min-version emacs-version))
     (error (concat "Your version of Emacs (%s) is too old. "
                    "Spacemacs requires Emacs version %s or above.")
            emacs-version spacemacs-emacs-min-version)
-  (load-file (concat (file-name-directory load-file-name)
-                     "core/core-load-paths.el"))
   (require 'core-spacemacs)
+  (configuration-layer/load-lock-file)
   (spacemacs/init)
-  (configuration-layer/sync)
+  (configuration-layer/stable-elpa-download-tarball)
+  (configuration-layer/load)
   (spacemacs-buffer/display-startup-note)
   (spacemacs/setup-startup-hook)
   (require 'server)

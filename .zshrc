@@ -62,6 +62,8 @@ export PATH=$PATH:$GOPATH/bin
 # Haskell
 export PATH=$PATH:~/cabal/ghc-mod-sandbox/.cabal-sandbox/bin
 export PATH=$HOME/.cabal/bin:$PATH
+export PATH=$HOME/.local/bin/:$PATH
+
 
 # Ruby
 export PATH="$PATH:$HOME/.rvm/bin"
@@ -112,6 +114,8 @@ alias ../../..='cd ../../..'
 alias sorry='sudo !!'
 alias ll='ls -l'
 
+alias add-theme='wget -O gogh https://git.io/vQgMr && chmod +x gogh && ./gogh && rm gogh'
+
 # Git aliases
 alias gg='git log --oneline --graph'
 alias gs='git status'
@@ -149,6 +153,13 @@ function ag-replace () {
 source ~/.nix-profile/etc/profile.d/nix.sh
 
 # Apply color theme...
-sh ~/.bin/one-dark.sh
+#sh ~/.bin/one-dark.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH=/home/brian/.local/bin/luna-studio:$PATH
+
+export FVT_BIN_DIR=/home/brian/repos/fvt/frostbite/bin
+
+# OPAM configuration
+. /home/brian/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
