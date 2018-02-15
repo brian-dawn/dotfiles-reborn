@@ -123,6 +123,7 @@ alias gco='git checkout'
 # Git current commit hash.
 alias gh='git rev-parse HEAD'
 alias git-fuck-it='git clean -d -X -f; git reset --hard'
+alias git-prune-local='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 
 # my own alias's/tools.
 alias bd-git-head-changed-files='git diff-tree --no-commit-id --name-only -r HEAD'

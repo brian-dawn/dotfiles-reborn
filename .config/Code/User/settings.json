@@ -12,6 +12,13 @@
     "vim.leader": "<space>",
     "vim.easymotionMarkerFontFamily": "Source Code Pro",
     "vim.useSystemClipboard": true,
-    "rust.mode": null,
-    "elm.formatOnSave": true
+    "rust.mode": "rls",
+    "elm.formatOnSave": true,
+    "rust.rustup": {
+        "toolchain": "nightly-x86_64-unknown-linux-gnu",
+        "nightlyToolchain": "nightly-x86_64-unknown-linux-gnu"
+    },
+    "rust.rls": {
+        "useRustfmt": true
+    }
 }
