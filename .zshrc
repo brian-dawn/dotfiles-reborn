@@ -26,7 +26,7 @@ autoload -U colors && colors
 
 # Config management
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles-repo/ --work-tree=$HOME'
-config config status.showUNtrackedFiles no
+/usr/bin/git --git-dir=$HOME/.dotfiles-repo/ --work-tree=$HOME config status.showUNtrackedFiles no
 
 export ANT_OPTS="-Xmx1024m -Xms512m"
 
@@ -164,3 +164,9 @@ export FVT_BIN_DIR=/home/brian/repos/fvt/frostbite/bin
 
 # OPAM configuration
 . /home/brian/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+
+
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
