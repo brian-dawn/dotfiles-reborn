@@ -32,6 +32,7 @@ mv * ..
 mv .* ..
 cd ..
 rm -r ~/myconf-tmp/
+rm -r ~/.git
 # Add the following to your bashrc/zshrc.
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles-repo/ --work-tree=$HOME'
 ```
