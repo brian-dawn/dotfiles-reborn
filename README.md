@@ -25,10 +25,14 @@ Special thanks to StreakyCobra on `https://news.ycombinator.com/item?id=11070797
 Now on new machines we can clone with:
 
 ```
-git clone --separate-git-dir=$HOME/.dotfiles-repo /path/to/repo $HOME/myconf-tmp
+git clone --separate-git-dir=$HOME/.dotfiles-repo [git-repo-here] $HOME/myconf-tmp
 cp ~/myconf-tmp/.gitmodules ~  # If you use Git submodules
-cp ~/myconf-tmp ~
+cd myconf-temp
+mv * ..
+mv .* ..
+cd ..
 rm -r ~/myconf-tmp/
+# Add the following to your bashrc/zshrc.
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles-repo/ --work-tree=$HOME'
 ```
 
