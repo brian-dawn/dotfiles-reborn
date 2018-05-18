@@ -6,7 +6,6 @@
          (split-string-and-unquote path ":")
          exec-path)))
 
-
 (require 'package)
 
 ;; Trust all themes by default.
@@ -44,6 +43,9 @@
     rainbow-delimiters
     rg
     markdown-mode
+    rust-mode
+    python-mode
+    haskell-mode
     smart-mode-line
     magit
     projectile
@@ -73,10 +75,6 @@
 ;; Highlight matching paren.
 (show-paren-mode 1)
 
-;; Enable rainbow delimiters.
-(require 'rainbow-delimiters)
-(rainbow-delimiters-mode)
-
 ;; Enable company mode.
 (require 'company-lsp)
 (push 'company-lsp company-backends)
@@ -84,7 +82,19 @@
 
 ;; Enable paredit.
 (require 'paredit)
-(add-hook 'clojure-mode-hook 'paredit-mode)
+(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
+(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+(add-hook 'ielm-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
+(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+(add-hook 'clojure-mode-hook          #'enable-paredit-mode)
+(add-hook 'haskell-mode-hook          #'enable-paredit-mode)
+
+;; Enable rainbow delimiters.
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 ;; Enable smex.
 (require 'smex)
@@ -116,6 +126,9 @@
 (setq sml/theme 'respectful)
 (require 'smart-mode-line)
 (sml/setup)
+
+;; Enable electric pair for symbol pairing.
+(electric-pair-mode t)
 
 ;; Symbol prettification.
 (defconst lisp--prettify-symbols-alist
