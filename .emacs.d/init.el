@@ -1,3 +1,12 @@
+;; Load zshrc paths.
+(let ((path (shell-command-to-string ". ~/.zshrc; echo -n $PATH")))
+  (setenv "PATH" path)
+  (setq exec-path 
+        (append
+         (split-string-and-unquote path ":")
+         exec-path)))
+
+
 (require 'package)
 
 ;; Trust all themes by default.
@@ -26,6 +35,10 @@
 ;; Add packages we want here.
 (defvar my-packages
   '(smex
+    solarized-theme
+    atom-one-dark-theme
+    base16-theme
+    flycheck
     undo-tree
     paredit
     rainbow-delimiters
@@ -37,6 +50,7 @@
     flx
     flx-ido
     ido-completing-read+
+    company
     smartparens) 
   "A list of packages to ensure are installed at launch.")
 
@@ -53,6 +67,9 @@
 ;; Disable the annoying bell.
 (setq ring-bell-function 'ignore)
 
+;; Set default theme.
+(load-theme 'solarized-light)
+
 ;; Highlight matching paren.
 (show-paren-mode 1)
 
@@ -60,10 +77,14 @@
 (require 'rainbow-delimiters)
 (rainbow-delimiters-mode)
 
+;; Enable company mode.
+(require 'company-lsp)
+(push 'company-lsp company-backends)
+(add-hook 'after-init-hook 'global-company-mode)
+
 ;; Enable paredit.
 (require 'paredit)
-(paredit-mode)
-;;(add-hook 'clojure-mode-hook 'paredit-mode)
+(add-hook 'clojure-mode-hook 'paredit-mode)
 
 ;; Enable smex.
 (require 'smex)
@@ -112,7 +133,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" default)))
+    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" default)))
  '(package-selected-packages
    (quote
     (smart-mode-line use-package undo-tree smex smartparens rainbow-delimiters projectile paredit markdown-mode magit ido-completing-read+ flx-ido ace-jump-mode))))
