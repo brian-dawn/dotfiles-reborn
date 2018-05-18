@@ -1,34 +1,124 @@
-;;; init.el --- Spacemacs Initialization File
-;;
-;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
-;;
-;; Author: Sylvain Benner <sylvain.benner@gmail.com>
-;; URL: https://github.com/syl20bnr/spacemacs
-;;
-;; This file is not part of GNU Emacs.
-;;
-;;; License: GPLv3
+(require 'package)
 
-;; Without this comment emacs25 adds (package-initialize) here
-;; (package-initialize)
+;; Trust all themes by default.
+(setq custom-safe-themes t)
 
-;; Increase gc-cons-threshold, depending on your system you may set it back to a
-;; lower value in your dotfile (function `dotspacemacs/user-config')
-(setq gc-cons-threshold 100000000)
+;; Add additional package sources.
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-(defconst spacemacs-version         "0.200.13" "Spacemacs version.")
-(defconst spacemacs-emacs-min-version   "24.4" "Minimal version of Emacs.")
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
 
-(if (not (version<= spacemacs-emacs-min-version emacs-version))
-    (error (concat "Your version of Emacs (%s) is too old. "
-                   "Spacemacs requires Emacs version %s or above.")
-           emacs-version spacemacs-emacs-min-version)
-  (load-file (concat (file-name-directory load-file-name)
-                     "core/core-load-paths.el"))
-  (require 'core-spacemacs)
-  (spacemacs/init)
-  (configuration-layer/sync)
-  (spacemacs-buffer/display-startup-note)
-  (spacemacs/setup-startup-hook)
-  (require 'server)
-  (unless (server-running-p) (server-start)))
+;; Set priorities for packages to find.
+(setq package-archive-priorities
+      '(("org"          . 200)
+        ("melpa-stable" . 150)
+        ("melpa"        . 100)
+        ("marmalade"    . 75)
+        ("gnu"          . 50)))
+
+(package-initialize)
+
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
+;; Add packages we want here.
+(defvar my-packages
+  '(smex
+    undo-tree
+    paredit
+    rainbow-delimiters
+    rg
+    markdown-mode
+    smart-mode-line
+    magit
+    projectile
+    flx
+    flx-ido
+    ido-completing-read+
+    smartparens) 
+  "A list of packages to ensure are installed at launch.")
+
+;; Install missing packages.
+(dolist (p my-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
+
+;; Disable UI stuff.
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+
+;; Disable the annoying bell.
+(setq ring-bell-function 'ignore)
+
+;; Highlight matching paren.
+(show-paren-mode 1)
+
+;; Enable rainbow delimiters.
+(require 'rainbow-delimiters)
+(rainbow-delimiters-mode)
+
+;; Enable paredit.
+(require 'paredit)
+(paredit-mode)
+;;(add-hook 'clojure-mode-hook 'paredit-mode)
+
+;; Enable smex.
+(require 'smex)
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+
+;; Enable projectile in programming projects.
+(require 'projectile)
+(projectile-global-mode)
+(add-hook 'prog-mode-hook 'projectile-mode)
+
+;; Enable flx-ido to fuzzy search all the places.
+(require 'flx-ido)
+(ido-mode 1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+
+;; Disable ido faces to see flx highlights.
+(setq ido-enable-flex-matching t)
+(setq ido-use-faces nil)
+(require 'ido)
+(ido-mode t)
+(setq ido-everywhere t)
+(require 'ido-completing-read+)
+(ido-ubiquitous-mode 1)
+
+;; Smart line mode enable.
+(setq sml/theme 'respectful)
+(require 'smart-mode-line)
+(sml/setup)
+
+;; Symbol prettification.
+(defconst lisp--prettify-symbols-alist
+  '(("lambda"  . ?λ)
+    (">="      . ?≥)))
+
+(global-prettify-symbols-mode +1)
+
+;; Auto generated.
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" default)))
+ '(package-selected-packages
+   (quote
+    (smart-mode-line use-package undo-tree smex smartparens rainbow-delimiters projectile paredit markdown-mode magit ido-completing-read+ flx-ido ace-jump-mode))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
