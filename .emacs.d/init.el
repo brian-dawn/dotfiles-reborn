@@ -1,3 +1,6 @@
+;; NOTE: you may need to run M-x package-list-packages before they can
+;; be found.
+
 ;; Load zshrc paths.
 (let ((path (shell-command-to-string ". ~/.zshrc; echo -n $PATH")))
   (setenv "PATH" path)
@@ -13,7 +16,7 @@
 
 ;; Add additional package sources.
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa" . "https://melpa.org/packages/") t)
 
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
@@ -66,6 +69,9 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 
+;; Hide the status bar because I'm awful.
+(setq-default mode-line-format nil)
+
 ;; Disable the annoying bell.
 (setq ring-bell-function 'ignore)
 
@@ -74,11 +80,6 @@
 
 ;; Highlight matching paren.
 (show-paren-mode 1)
-
-;; Enable company mode.
-(require 'company-lsp)
-(push 'company-lsp company-backends)
-(add-hook 'after-init-hook 'global-company-mode)
 
 ;; Enable paredit.
 (require 'paredit)
@@ -139,20 +140,3 @@
 
 ;; Auto generated.
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" default)))
- '(package-selected-packages
-   (quote
-    (smart-mode-line use-package undo-tree smex smartparens rainbow-delimiters projectile paredit markdown-mode magit ido-completing-read+ flx-ido ace-jump-mode))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
