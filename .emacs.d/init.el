@@ -45,10 +45,18 @@
     paredit
     rainbow-delimiters
     rg
+    
     markdown-mode
+
+    ;; Rust
     rust-mode
+    racer    
+    
     python-mode
     haskell-mode
+
+    toml-mode
+    
     smart-mode-line
     magit
     projectile
@@ -130,6 +138,20 @@
 
 ;; Enable electric pair for symbol pairing.
 (electric-pair-mode t)
+
+
+;; Company mode.
+;; Allow C-n and C-p to move around on autocomplete window.
+(define-key company-active-map (kbd "C-n") 'company-select-next-or-abort)
+(define-key company-active-map (kbd "C-p") 'company-select-previous-or-abort)
+
+;; Rust stuff.
+(add-hook 'rust-mode-hook #'racer-mode)
+(add-hook 'racer-mode-hook #'eldoc-mode)
+(add-hook 'racer-mode-hook #'company-mode)
+(require 'rust-mode)
+(define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
+(setq company-tooltip-align-annotations t)
 
 ;; Symbol prettification.
 (defconst lisp--prettify-symbols-alist
