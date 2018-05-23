@@ -52,8 +52,15 @@
     rust-mode
     racer    
     
+    ;; Python
     python-mode
+    jedi
+
     haskell-mode
+
+    ;; Clojure
+    clojure-mode
+    cider
 
     toml-mode
     
@@ -142,6 +149,7 @@
 
 ;; Company mode.
 ;; Allow C-n and C-p to move around on autocomplete window.
+(require 'company)
 (define-key company-active-map (kbd "C-n") 'company-select-next-or-abort)
 (define-key company-active-map (kbd "C-p") 'company-select-previous-or-abort)
 
@@ -153,6 +161,10 @@
 (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
 (setq company-tooltip-align-annotations t)
 
+;; Python stuff.
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
+
 ;; Symbol prettification.
 (defconst lisp--prettify-symbols-alist
   '(("lambda"  . ?λ)
@@ -162,3 +174,17 @@
 
 ;; Auto generated.
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (jedi use-package undo-tree toml-mode solarized-theme smex smartparens smart-mode-line ripgrep rg rainbow-delimiters racer python-mode projectile paredit magit lsp-rust lsp-python lsp-haskell ido-completing-read+ flycheck flx-ido company-lsp cider base16-theme atom-one-dark-theme ace-jump-mode))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
