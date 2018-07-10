@@ -50,7 +50,8 @@
 
     ;; Rust
     rust-mode
-    racer    
+    racer
+    flycheck-rust
     
     ;; Python
     python-mode
@@ -157,6 +158,8 @@
 (require 'rust-mode)
 (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
 (setq company-tooltip-align-annotations t)
+(setq rust-format-on-save t)
+(add-hook 'rust-mode-hook #'flycheck-mode)
 
 ;; Python stuff.
 (add-hook 'python-mode-hook 'jedi:setup)
