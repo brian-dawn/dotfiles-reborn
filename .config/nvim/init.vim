@@ -17,14 +17,41 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 
+
+
+" assuming your using vim-plug: https://github.com/junegunn/vim-plug
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" IMPORTANTE: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
+
+" NOTE: you need to install completion sources to get completions. Check
+" our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-tmux'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-racer'
+
+
+
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+" (Optional) Multi-entry selection UI.
+Plug 'junegunn/fzf'
+
 " Code and files fuzzy finder
 " Plug 'ctrlpvim/ctrlp.vim'
 " Extension to ctrlp, for fuzzy command finder
 " Plug 'fisadev/vim-ctrlp-cmdpalette'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
-
 
 " Async autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -59,6 +86,20 @@ set softtabstop=4
 set shiftwidth=4
 
 
+" Language server stuff.
+" Required for operations modifying multiple buffers like rename.
+set hidden
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+    \ 'python': ['/usr/local/bin/pyls'],
+    \ }
+
+noremap <silent> H :call LanguageClient_textDocument_hover()<CR>
+noremap <silent> Z :call LanguageClient_textDocument_definition()<CR>
+noremap <silent> R :call LanguageClient_textDocument_rename()<CR>
+noremap <silent> S :call LanugageClient_textDocument_documentSymbol()<CR>
 
 
 " Use deoplete.
