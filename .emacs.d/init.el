@@ -48,6 +48,10 @@
     
     markdown-mode
 
+    ;; Purescript
+    purescript-mode
+    psc-ide
+
     ;; Rust
     rust-mode
     racer
@@ -160,6 +164,23 @@
 (setq company-tooltip-align-annotations t)
 (setq rust-format-on-save t)
 (add-hook 'rust-mode-hook #'flycheck-mode)
+
+;; Purescript stuff.
+(require 'psc-ide)
+
+(add-hook 'purescript-mode-hook
+  (lambda ()
+    (psc-ide-mode)
+    (company-mode)
+    (flycheck-mode)
+    (turn-on-purescript-indentation)))
+
+;; Add support for psc-packge.
+(setq psc-ide-source-globs '(
+  "src/**/*.purs"
+  "test/**/*.purs"
+  ".psc-package/*/*/*/src/**/*.purs"
+  "bower_components/purescript-*/src/**/*.purs"))
 
 ;; Python stuff.
 (add-hook 'python-mode-hook 'jedi:setup)
