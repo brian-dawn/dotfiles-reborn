@@ -21,5 +21,12 @@
     "rust.rls": {
         "useRustfmt": true
     },
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "none",
+    "editor.renderIndentGuides": false,
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden"
 }
