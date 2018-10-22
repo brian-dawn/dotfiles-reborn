@@ -165,3 +165,4 @@ export FVT_BIN_DIR=/home/brian/repos/fvt/frostbite/bin
 # OPAM configuration
 . /home/brian/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
+export AWS_CONFIG_FILE=$HOME/.aws/config
