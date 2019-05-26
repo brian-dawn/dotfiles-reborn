@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Fix the umask on WSL
+if grep -q Microsoft /proc/version; then
+    umask 002
+fi
+
 # Path to the bash it configuration
 export BASH_IT="$HOME/.bash_it"
 
