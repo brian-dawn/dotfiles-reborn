@@ -53,6 +53,11 @@ export PATH=/usr/local/bin:$PATH
 # emoji fix
 export LESS='--raw-control-chars'
 
+# neovim config.
+alias vim=nvim
+
+# Use ripgrep for fzf so we respect .gitignore
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
 # Emacs
 export PATH=$PATH:$HOME/.cask/bin

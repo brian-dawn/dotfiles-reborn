@@ -7,12 +7,3 @@ set shiftwidth=4
 set expandtab
 syntax on
 
-" No BS no extension auto close brackets.
-" I may want to add ctrl-p again or something.
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
