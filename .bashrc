@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+
+# Install fzf
+## Say yes to everything, then C-T and C-R will use fzf.
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
+
+
+
 # Fix the umask on WSL
 if grep -q Microsoft /proc/version; then
     umask 002
@@ -118,3 +127,5 @@ alias git-prune-local='git branch --merged | egrep -v "(^\*|master|dev)" | xargs
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
