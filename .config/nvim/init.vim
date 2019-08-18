@@ -22,6 +22,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 
 " assuming your using vim-plug: https://github.com/junegunn/vim-plug
+Plug 'easymotion/vim-easymotion'
 
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -121,4 +122,11 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 nnoremap <silent> <c-p> :call fzf#run({
 \   'down': '40%',
 \   'sink': 'botright split' })<CR>
+
+
+
+" Make easy motion just use leader key.
+" Also make the leader key just be space.
+let mapleader=" "
+map <Leader> <Plug>(easymotion-prefix)
 
