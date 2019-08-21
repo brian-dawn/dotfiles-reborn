@@ -129,3 +129,5 @@ export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
