@@ -14,6 +14,9 @@ bindsym $mod+Ctrl+space exec rofi -show window
 bindsym $mod+minus gaps inner current minus 6
 bindsym $mod+plus gaps inner current plus 6
 
+bindsym $mod+BackSpace split toggle
+
+
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
