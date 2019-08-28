@@ -28,5 +28,6 @@
     "editor.renderWhitespace": "none",
     "editor.renderIndentGuides": false,
     "editor.scrollbar.horizontal": "hidden",
-    "editor.scrollbar.vertical": "hidden"
+    "editor.scrollbar.vertical": "hidden",
+    "typescript.updateImportsOnFileMove.enabled": "always"
 }
