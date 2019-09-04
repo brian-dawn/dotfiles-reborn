@@ -123,6 +123,8 @@ alias git-fuck-it='git clean -d -X -f; git reset --hard'
 alias git-prune-local='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 
 
+export HISTCONTROL=erasedups
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
