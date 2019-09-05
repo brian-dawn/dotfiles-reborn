@@ -2,8 +2,9 @@ exec --no-startup-id setxkbmap -option ctrl:swapcaps
 exec_always --no-startup-id ~/.config/i3/polybar.sh &
 exec --no-startup-id nitrogen --restore
 
-
-
+# Requires the program `light`
+bindsym XF86MonBrightnessUp exec light -A 10
+bindsym XF86MonBrightnessDown exec light -U 10
 
 gaps inner 5
 gaps outer 0
