@@ -1,3 +1,4 @@
+exec exec xrandr --dpi 168
 exec_always --no-startup-id ~/.config/i3/polybar.sh &
 exec --no-startup-id nitrogen --restore
 
