@@ -2,9 +2,20 @@ exec --no-startup-id setxkbmap -option ctrl:swapcaps
 exec_always --no-startup-id ~/.config/i3/polybar.sh &
 exec --no-startup-id nitrogen --restore
 
+
+# Have mate use i3.
+# gsettings set org.mate.session.required-components filemanager ''
+# gsettings set org.mate.background draw-background false
+# gsettings set org.mate.session.required-components windowmanager 'i3'
+# 
+# gsettings set org.mate.mate-menu hot-key ''
+# gsettings set com.solus-project.brisk-menu hot-key ''
+
+
+
 # Requires the program `light`
-bindsym XF86MonBrightnessUp exec light -A 10
-bindsym XF86MonBrightnessDown exec light -U 10
+# bindsym XF86MonBrightnessUp exec light -A 10
+# bindsym XF86MonBrightnessDown exec light -U 10
 
 gaps inner 5
 gaps outer 0
