@@ -12,7 +12,7 @@ MiscMenubarDefault=FALSE
 MiscMouseAutohide=FALSE
 MiscMouseWheelZoom=TRUE
 MiscToolbarDefault=FALSE
-MiscConfirmClose=TRUE
+MiscConfirmClose=FALSE
 MiscCycleTabs=TRUE
 MiscTabCloseButtons=TRUE
 MiscTabCloseMiddleClick=FALSE
@@ -36,4 +36,6 @@ TabActivityColor=#88C0D0
 ShortcutsNoMenukey=TRUE
 ShortcutsNoMnemonics=TRUE
 ShortcutsNoHelpkey=TRUE
+MiscSearchDialogOpacity=100
+MiscShowUnsafePasteDialog=FALSE
 
