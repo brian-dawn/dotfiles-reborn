@@ -8,8 +8,8 @@
       <property name="position-locked" type="bool" value="true"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="8"/>
+        <value type="int" value="1"/>
         <value type="int" value="7"/>
-        <value type="int" value="4"/>
         <value type="int" value="6"/>
         <value type="int" value="9"/>
         <value type="int" value="5"/>
@@ -18,9 +18,11 @@
       <property name="role" type="string" value="xfce4-panel-12965750720"/>
       <property name="length-adjust" type="bool" value="true"/>
       <property name="background-style" type="uint" value="0"/>
-      <property name="size" type="uint" value="27"/>
+      <property name="size" type="uint" value="30"/>
       <property name="mode" type="uint" value="0"/>
       <property name="autohide-behavior" type="uint" value="0"/>
+      <property name="disable-struts" type="bool" value="false"/>
+      <property name="nrows" type="uint" value="1"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -39,7 +41,6 @@
         <value type="string" value="-shutdown"/>
       </property>
     </property>
-    <property name="plugin-4" type="string" value="pager"/>
     <property name="plugin-6" type="string" value="systray">
       <property name="names-visible" type="array">
         <value type="string" value="pnmixer"/>
@@ -53,8 +54,11 @@
         <value type="string" value="xnoise"/>
       </property>
       <property name="show-frame" type="bool" value="false"/>
-      <property name="size-max" type="uint" value="24"/>
+      <property name="size-max" type="uint" value="30"/>
       <property name="names-ordered" type="array">
+        <value type="string" value="redshift-gtk"/>
+        <value type="string" value="drop-down terminal"/>
+        <value type="string" value="slack"/>
         <value type="string" value="blueman"/>
         <value type="string" value="msm notifier"/>
         <value type="string" value="blueman-tray"/>
@@ -64,6 +68,15 @@
         <value type="string" value="clipman"/>
         <value type="string" value="pamac-tray"/>
         <value type="string" value="xfce4-power-manager"/>
+      </property>
+      <property name="square-icons" type="bool" value="false"/>
+      <property name="names-hidden" type="array">
+        <value type="string" value="blueman-tray"/>
+        <value type="string" value="xfce terminal"/>
+        <value type="string" value="clipman"/>
+        <value type="string" value="blueman"/>
+        <value type="string" value="blueman-applet"/>
+        <value type="string" value="pamac-tray"/>
       </property>
     </property>
     <property name="plugin-7" type="string" value="separator">
@@ -75,6 +88,7 @@
     </property>
     <property name="plugin-8" type="string" value="whiskermenu"/>
     <property name="plugin-5" type="string" value="clock"/>
+    <property name="plugin-1" type="string" value="i3-workspaces"/>
   </property>
   <property name="configver" type="int" value="2"/>
 </channel>

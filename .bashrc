@@ -111,7 +111,8 @@ export MAVEN_OPTS='-Xmx1024m -XX:MaxDirectMemorySize=1024m -XX:MaxPermSize=256m'
 # Make xclip be pbcopy
 alias xclip="xclip -selection c"
 
-alias ll='ls -l'
+alias ls='ls --color=auto'
+alias ll='ls --color=auto -l'
 
 # Git aliases
 alias gg='git log --oneline --graph'
@@ -122,7 +123,7 @@ alias gh='git rev-parse HEAD'
 alias git-fuck-it='git clean -d -X -f; git reset --hard'
 alias git-prune-local='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 
-
+# Make it so we can save spaces in front of things to history.
 export HISTCONTROL=erasedups
 
 
