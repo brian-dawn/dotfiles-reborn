@@ -1,6 +1,6 @@
 {
     "vim.disableAnnoyingNeovimMessage": true,
-    "workbench.colorTheme": "Gruvbox Light (Medium)",
+    "workbench.colorTheme": "Arc+",
     "editor.fontFamily": "Source Code Pro",
     "clang.cxxflags": [
         "-std=c++14"
