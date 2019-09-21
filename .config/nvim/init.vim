@@ -38,6 +38,9 @@ Plug 'tpope/vim-surround'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 
+" Kotlin
+Plug 'udalov/kotlin-vim'
+
 " Rainbow parens
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle<Paste>
