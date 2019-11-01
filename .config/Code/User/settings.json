@@ -1,6 +1,6 @@
 {
     "vim.disableAnnoyingNeovimMessage": true,
-    "workbench.colorTheme": "Arc+",
+    "workbench.colorTheme": "Pop Dark",
     "editor.fontFamily": "Source Code Pro",
     "clang.cxxflags": [
         "-std=c++14"
@@ -22,12 +22,14 @@
         "useRustfmt": true
     },
     "editor.formatOnSave": true,
-    "editor.minimap.enabled": false,
-    "breadcrumbs.enabled": false,
+    "editor.minimap.enabled": true,
+    "breadcrumbs.enabled": true,
     "editor.renderControlCharacters": true,
     "editor.renderWhitespace": "none",
     "editor.renderIndentGuides": false,
     "editor.scrollbar.horizontal": "hidden",
     "editor.scrollbar.vertical": "hidden",
-    "typescript.updateImportsOnFileMove.enabled": "always"
+    "editor.scrollbar.vertical": "hidden",
+    "rust-analyzer.enableEnhancedTyping": false,
+    "window.menuBarVisibility": "toggle"
 }
