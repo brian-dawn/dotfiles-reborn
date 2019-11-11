@@ -29,8 +29,9 @@
     "editor.renderIndentGuides": false,
     "editor.scrollbar.horizontal": "hidden",
     "editor.scrollbar.vertical": "hidden",
-    "editor.scrollbar.vertical": "hidden",
     "rust-analyzer.enableEnhancedTyping": false,
     "window.menuBarVisibility": "toggle",
-    "python.jediEnabled": false
+    "python.jediEnabled": false,
+    "window.menuBarVisibility": "toggle",
+    "files.autoSave": "afterDelay",
 }
