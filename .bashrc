@@ -2,12 +2,15 @@
 
 
 # Install fzf
-## Say yes to everything, then C-T and C-R will use fzf.
-#git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-#~/.fzf/install
-# install starship
-# cargo install starship
+# Say yes to everything, then C-T and C-R will use fzf.
+# $ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+# $ ~/.fzf/install
 
+# install starship
+# $ cargo install starship
+
+# install emojis manjaro
+# $ pacman -Sy noto-fonts-emoji
 
 # Fix the umask on WSL
 if grep -q Microsoft /proc/version; then
