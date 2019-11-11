@@ -22,7 +22,7 @@
         "useRustfmt": true
     },
     "editor.formatOnSave": true,
-    "editor.minimap.enabled": true,
+    "editor.minimap.enabled": false,
     "breadcrumbs.enabled": true,
     "editor.renderControlCharacters": true,
     "editor.renderWhitespace": "none",
@@ -31,5 +31,6 @@
     "editor.scrollbar.vertical": "hidden",
     "editor.scrollbar.vertical": "hidden",
     "rust-analyzer.enableEnhancedTyping": false,
-    "window.menuBarVisibility": "toggle"
+    "window.menuBarVisibility": "toggle",
+    "python.jediEnabled": false
 }

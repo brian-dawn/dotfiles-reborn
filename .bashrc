@@ -5,8 +5,8 @@
 ## Say yes to everything, then C-T and C-R will use fzf.
 #git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 #~/.fzf/install
-
-
+# install starship
+# cargo install starship
 
 
 # Fix the umask on WSL
@@ -14,70 +14,15 @@ if grep -q Microsoft /proc/version; then
     umask 002
 fi
 
-# Path to the bash it configuration
-export BASH_IT="$HOME/.bash_it"
-
-# Lock and Load a custom theme file.
-# Leave empty to disable theming.
-# location /.bash_it/themes/
-export BASH_IT_THEME='sexy'
-
-# (Advanced): Change this to the name of your remote repo if you
-# cloned bash-it with a remote other than origin such as `bash-it`.
-# export BASH_IT_REMOTE='bash-it'
-
 # Your place for hosting Git repos. I use this for private repos.
 export GIT_HOSTING='git@git.domain.com'
 
 # Don't check mail when opening terminal.
 unset MAILCHECK
 
-# Set this to the command you use for todo.txt-cli
-export TODO="t"
-
-# Set this to false to turn off version control status checking within the prompt for all themes
-export SCM_CHECK=true
-
-
-
-# Load Bash It
-source "$BASH_IT"/bash_it.sh
-
-#############
-# Begin theme customization
-#############
-
-MAGENTA="\033[1;31m"
-ORANGE="\033[1;33m"
-GREEN="\033[1;32m"
-PURPLE="\033[1;35m"
-WHITE="\033[1;37m"
-BOLD=""
-RESET="\033[m"
-
-parse_git_dirty () {
-  [[ $(git status 2> /dev/null | tail -n1 | cut -c 1-17) != "nothing to commit" ]] && echo "*"
-}
-parse_git_branch () {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
-}
-
-function prompt_command() {
-  PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
-}
-
-safe_append_prompt_command prompt_command
-
-#############
-# End theme customization
-#############
-
-
 # Config management
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles-repo/ --work-tree=$HOME'
 /usr/bin/git --git-dir=$HOME/.dotfiles-repo/ --work-tree=$HOME config status.showUNtrackedFiles no
-
-export ANT_OPTS="-Xmx1024m -Xms512m"
 
 export TERM=xterm-256color
 export PKG_CONFIG_PATH="/usr/X11/lib/pkgconfig"
@@ -157,7 +102,6 @@ export HISTCONTROL=erasedups
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -165,3 +109,5 @@ if [ -x "$(command -v rbenv)" ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
 fi
+
+eval "$(starship init bash)"
