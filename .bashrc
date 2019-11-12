@@ -87,8 +87,19 @@ export MAVEN_OPTS='-Xmx1024m -XX:MaxDirectMemorySize=1024m -XX:MaxPermSize=256m'
 # Make xclip be pbcopy
 alias xclip="xclip -selection c"
 
-alias ls='ls --color=auto'
-alias ll='ls --color=auto -l'
+case `uname` in
+  Darwin)
+
+  alias ls='ls -G'
+  alias ll='ls -lG'
+  ;;
+  Linux)
+
+  alias ls='ls --color=auto'
+  alias ll='ls --color=auto -l'
+  ;;
+esac
+
 
 # Git aliases
 alias gg='git log --oneline --graph'
