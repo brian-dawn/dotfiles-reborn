@@ -3,3 +3,6 @@ disabled = true
 
 [character]
 symbol = "何"
+
+[aws]
+disabled = true
