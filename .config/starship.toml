@@ -6,3 +6,6 @@ symbol = "何"
 
 [aws]
 disabled = true
+
+[conda]
+disabled = true

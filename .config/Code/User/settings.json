@@ -34,4 +34,5 @@
     "python.jediEnabled": false,
     "window.menuBarVisibility": "toggle",
     "files.autoSave": "afterDelay",
+    "terminal.integrated.inheritEnv": false,
 }

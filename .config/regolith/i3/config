@@ -35,7 +35,7 @@ floating_modifier $mod
 hide_edge_borders smart
 
 # start a terminal
-bindsym $mod+Return exec /usr/bin/alacritty
+bindsym $mod+Return exec xfce4-terminal
 
 # start a web browser
 bindsym $mod+Shift+Return exec /usr/bin/sensible-browser
