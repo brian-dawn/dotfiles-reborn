@@ -25,11 +25,10 @@ Special thanks to StreakyCobra on `https://news.ycombinator.com/item?id=11070797
 Now on new machines we can clone with:
 
 ```
-git clone --separate-git-dir=$HOME/.dotfiles-repo [git-repo-here] $HOME/myconf-tmp
-cp ~/myconf-tmp/.gitmodules ~  # If you use Git submodules
+git clone --separate-git-dir=$HOME/.dotfiles-repo git@github.com:brian-dawn/dotfiles-reborn.git $HOME/myconf-tmp
 cd myconf-temp
 mv * ..
-mv .* ..
+cp -r .config/** ~/.config/
 cd ..
 rm -r ~/myconf-tmp/
 rm -r ~/.git
