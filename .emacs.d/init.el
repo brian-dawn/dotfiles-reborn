@@ -48,6 +48,9 @@
     
     markdown-mode
 
+    ;; Racket
+    racket-mode
+
     ;; Purescript
     purescript-mode
     psc-ide
@@ -201,7 +204,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(jedi use-package undo-tree toml-mode solarized-theme smex smartparens smart-mode-line ripgrep rg rainbow-delimiters racer python-mode projectile paredit magit lsp-rust lsp-python lsp-haskell ido-completing-read+ flycheck flx-ido company-lsp cider base16-theme atom-one-dark-theme ace-jump-mode)))
+   (quote
+    (jedi use-package undo-tree toml-mode solarized-theme smex smartparens smart-mode-line ripgrep rg rainbow-delimiters racer python-mode projectile paredit magit lsp-rust lsp-python lsp-haskell ido-completing-read+ flycheck flx-ido company-lsp cider base16-theme atom-one-dark-theme ace-jump-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
