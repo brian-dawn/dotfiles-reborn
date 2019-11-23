@@ -35,6 +35,10 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$PATH:~/.bin
 export PATH=/usr/local/bin:$PATH
 
+# Python
+export PATH="$HOME/.poetry/bin:$PATH"
+
+
 # emoji fix
 export LESS='--raw-control-chars'
 

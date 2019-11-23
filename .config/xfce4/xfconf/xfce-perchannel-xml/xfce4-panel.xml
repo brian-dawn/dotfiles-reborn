@@ -56,6 +56,7 @@
       <property name="show-frame" type="bool" value="false"/>
       <property name="size-max" type="uint" value="30"/>
       <property name="names-ordered" type="array">
+        <value type="string" value="discord"/>
         <value type="string" value="redshift-gtk"/>
         <value type="string" value="drop-down terminal"/>
         <value type="string" value="slack"/>
