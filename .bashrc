@@ -75,15 +75,6 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 
 # RUST
 source $HOME/.cargo/env
-case `uname` in
-  Darwin)
-  export RUST_SRC_PATH=~/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src
-  ;;
-  Linux)
-  export RUST_SRC_PATH=$HOME/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
-  ;;
-esac
-
 
 # Java/maven
 export MAVEN_OPTS='-Xmx1024m -XX:MaxDirectMemorySize=1024m -XX:MaxPermSize=256m'
