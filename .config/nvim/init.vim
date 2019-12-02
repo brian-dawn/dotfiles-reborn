@@ -18,8 +18,8 @@ call plug#begin('~/.config/nvim/plugged')
 
 
 
-
-
+" TOML
+Plug 'cespare/vim-toml'
 
 " assuming your using vim-plug: https://github.com/junegunn/vim-plug
 Plug 'easymotion/vim-easymotion'

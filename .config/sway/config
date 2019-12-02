@@ -1,7 +1,3 @@
-
-exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
-exec_always --no-startup-id gnome-power-manager 
-
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -142,14 +138,10 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-new_window 1pixel
-default_border none
+default_border pixel 1
 gaps inner 10
 gaps outer 0
 
 bar {
   status_command i3status
 }
-
-
-output "*" background ~/Dropbox/Images/HD/wallhaven-243289.jpg stretch
