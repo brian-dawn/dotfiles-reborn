@@ -108,6 +108,11 @@ alias git-prune-local='git branch --merged | egrep -v "(^\*|master|dev)" | xargs
 # Make it so we can save spaces in front of things to history.
 export HISTCONTROL=erasedups
 
+# Ibus (alternate input)
+# If we have Anthy setup then we can use c-j to enable/disable Japanese input. 
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
