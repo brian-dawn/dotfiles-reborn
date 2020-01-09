@@ -1,6 +1,6 @@
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 # exec_always --no-startup-id ~/.config/i3/polybar.sh &
-# exec --no-startup-id nitrogen --restore
+exec --no-startup-id nitrogen --restore
 
 
 # Have mate use i3.
