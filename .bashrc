@@ -107,7 +107,13 @@ alias git-fuck-it='git clean -d -X -f; git reset --hard'
 alias git-prune-local='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 
 # Make it so we can save spaces in front of things to history.
-export HISTCONTROL=erasedups
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+export HISTSIZE=100000                   # big big history
+export HISTFILESIZE=100000               # big big history
+shopt -s histappend                      # append to history, don't overwrite it
+
+# Save and reload the history after each command finishes so we sync across terminals.
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 export XMODIFIERS=@im=ibus
 export GTK_IM_MODULE=ibus
