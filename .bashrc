@@ -90,7 +90,6 @@ case `uname` in
   ;;
   Linux)
 
-  setxkbmap -option ctrl:swapcaps
   alias ls='ls --color=auto'
   alias ll='ls --color=auto -l'
   ;;
