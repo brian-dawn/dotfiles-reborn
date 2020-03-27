@@ -12,10 +12,6 @@
 # install emojis manjaro
 # $ pacman -Sy noto-fonts-emoji
 
-# Fix the umask on WSL
-if grep -q Microsoft /proc/version; then
-    umask 002
-fi
 
 # Your place for hosting Git repos. I use this for private repos.
 export GIT_HOSTING='git@git.domain.com'
@@ -90,6 +86,10 @@ case `uname` in
   ;;
   Linux)
 
+  # Fix the umask on WSL
+  if grep -q Microsoft /proc/version; then
+      umask 002
+  fi
   alias ls='ls --color=auto'
   alias ll='ls --color=auto -l'
   ;;
@@ -112,7 +112,7 @@ export HISTFILESIZE=100000               # big big history
 shopt -s histappend                      # append to history, don't overwrite it
 
 # Save and reload the history after each command finishes so we sync across terminals.
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export PROMPT_COMMAND="history -a; history -c; history -r $PROMPT_COMMAND"
 
 export XMODIFIERS=@im=ibus
 export GTK_IM_MODULE=ibus
