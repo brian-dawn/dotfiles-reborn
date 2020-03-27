@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 # Install fzf
 # Say yes to everything, then C-T and C-R will use fzf.
 # $ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -109,7 +108,7 @@ alias git-prune-local='git branch --merged | egrep -v "(^\*|master|dev)" | xargs
 export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
 export HISTSIZE=100000                   # big big history
 export HISTFILESIZE=100000               # big big history
-shopt -s histappend                      # append to history, don't overwrite it
+setopt appendhistory
 
 # Save and reload the history after each command finishes so we sync across terminals.
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
@@ -121,11 +120,11 @@ export QT_IM_MODULE=ibus
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if [ -x "$(command -v rbenv)" ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
 fi
 
-eval "$(starship init bash)"
+eval "$(starship init zsh)"
