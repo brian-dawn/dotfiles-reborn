@@ -118,6 +118,9 @@ alias gh='git rev-parse HEAD'
 alias git-fuck-it='git clean -d -X -f; git reset --hard'
 alias git-prune-local='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 
+# Setup default editor.
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
 export XMODIFIERS=@im=ibus
 export GTK_IM_MODULE=ibus
