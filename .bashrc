@@ -125,7 +125,7 @@ alias ssh-joestar='ssh 67.205.137.3'
 alias ssh-garden='ssh pi@botanist.dev'
 
 # kitty commands
-alias kitty-light='kitty @ set_colors --configured $HOME/.config/kitty/kitty-themes/themes/AtomOneLight.conf'
+alias kitty-light='kitty @ set_colors --configured $HOME/.config/kitty/kitty-themes/themes/PencilLight.conf'
 alias kitty-dark='kitty @ set_colors --configured $HOME/.config/kitty/kitty-themes/themes/OneDark.conf'
 
 # Setup default editor.
