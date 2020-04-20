@@ -45,6 +45,10 @@ Plug 'udalov/kotlin-vim'
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 0 "set to 0 if you want to enable it later via :RainbowToggle<Paste>
 
+" Improved spell check, use ZL in normal mode to get suggestions and fixes.
+" Use zg to add a word to our wordlists.
+Plug 'kamykn/spelunker.vim'
+
 call plug#end()
 
 " If we installed plug here, also install packages.
