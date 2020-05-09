@@ -137,6 +137,10 @@ if [ -x "$(command -v dust)" ]; then
     alias du=dust
 fi
 
+if [ -x "$(command -v bat)" ]; then
+    alias cat=bat
+fi
+
 # Setup default editor.
 export VISUAL=vim
 export EDITOR="$VISUAL"
