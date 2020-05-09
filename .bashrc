@@ -130,15 +130,23 @@ alias kitty-dark='kitty @ set_colors --configured -a $HOME/.config/kitty/kitty-t
 
 # Builtin overrides (and most of these also work on Windows).
 if [ -x "$(command -v exa)" ]; then
+    # cargo install exa
     alias ls=exa
 fi
 
 if [ -x "$(command -v dust)" ]; then
+    # cargo install du-dust
     alias du=dust
 fi
 
 if [ -x "$(command -v bat)" ]; then
+    # cargo install bat
     alias cat=bat
+fi
+
+if [ -x "$(command -v tokei)" ]; then
+    # cargo install tokei
+    alias cloc=tokei
 fi
 
 # Setup default editor.
