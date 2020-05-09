@@ -141,7 +141,7 @@ fi
 
 if [ -x "$(command -v bat)" ]; then
     # cargo install bat
-    alias cat=bat
+    alias cat=bat --style=plain
 fi
 
 if [ -x "$(command -v tokei)" ]; then
