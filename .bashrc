@@ -128,6 +128,15 @@ alias ssh-garden='ssh pi@botanist.dev'
 alias kitty-light='kitty @ set_colors --configured -a $HOME/.config/kitty/kitty-themes/themes/PencilLight.conf'
 alias kitty-dark='kitty @ set_colors --configured -a $HOME/.config/kitty/kitty-themes/themes/OneDark.conf'
 
+# Builtin overrides (and most of these also work on Windows).
+if [ -x "$(command -v exa)" ]; then
+    alias ls=exa
+fi
+
+if [ -x "$(command -v dust)" ]; then
+    alias du=dust
+fi
+
 # Setup default editor.
 export VISUAL=vim
 export EDITOR="$VISUAL"
