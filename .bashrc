@@ -67,7 +67,10 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export PATH=/usr/local/opt/ruby/bin:$PATH
 
 # JS
-export PATH="$PATH:`yarn global bin`"
+
+if [ -x "$(command -v yarn)" ]; then
+    export PATH="$PATH:`yarn global bin`"
+fi
 
 # RUST
 source $HOME/.cargo/env
