@@ -128,8 +128,15 @@ alias ssh-joestar='ssh 67.205.137.3'
 alias ssh-garden='ssh pi@botanist.dev'
 
 # kitty commands
-alias kitty-light='kitty @ set_colors --configured -a $HOME/.config/kitty/kitty-themes/themes/PencilLight.conf'
-alias kitty-dark='kitty @ set_colors --configured -a $HOME/.config/kitty/kitty-themes/themes/OneDark.conf'
+function kitty-light {
+    kitty @ set_colors --configured -a $HOME/.config/kitty/kitty-themes/themes/PencilLight.conf
+    alias cat='bat --theme ansi-light --style=plain'
+}
+
+function kitty-dark {
+    kitty @ set_colors --configured -a $HOME/.config/kitty/kitty-themes/themes/OneDark.conf
+    alias cat='bat --theme ansi-dark --style=plain'
+}
 
 # Builtin overrides (and most of these also work on Windows).
 if [ -x "$(command -v exa)" ]; then
@@ -144,7 +151,7 @@ fi
 
 if [ -x "$(command -v bat)" ]; then
     # cargo install bat
-    alias cat=bat --style=plain
+    alias cat='bat --theme ansi-dark --style=plain'
 fi
 
 if [ -x "$(command -v tokei)" ]; then
