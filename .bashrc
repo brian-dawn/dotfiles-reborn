@@ -11,6 +11,7 @@
 
 # install emojis manjaro
 # $ pacman -Sy noto-fonts-emoji
+# $ pacman -Sy otf-fira-code ttf-fira-code
 
 
 # Your place for hosting Git repos. I use this for private repos.
