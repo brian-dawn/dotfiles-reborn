@@ -74,7 +74,9 @@ if [ -x "$(command -v yarn)" ]; then
 fi
 
 # RUST
-source $HOME/.cargo/env
+if [ -f "$HOME/.cargo/env" ]; then
+    source $HOME/.cargo/env
+fi
 
 # Java/maven
 export MAVEN_OPTS='-Xmx1024m -XX:MaxDirectMemorySize=1024m -XX:MaxPermSize=256m'
@@ -178,4 +180,6 @@ if [ -x "$(command -v rbenv)" ]; then
     eval "$(rbenv init -)"
 fi
 
-eval "$(starship init bash)"
+if [ -x "$(command -v starship)" ]; then
+    eval "$(starship init bash)"
+fi
