@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# If we are in WSL then cd to home
+if [ "$PWD" = '/mnt/c/Users/Brian' ]
+then
+    cd
+fi
 
 # Install fzf
 # Say yes to everything, then C-T and C-R will use fzf.
@@ -103,7 +108,7 @@ case `uname` in
   Linux)
 
   # Save and reload the history after each command finishes so we sync across terminals.
-  export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+  #export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
   # Fix the umask on WSL
   if grep -q Microsoft /proc/version; then
