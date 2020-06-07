@@ -139,12 +139,10 @@ alias ssh-garden='ssh pi@botanist.dev'
 # kitty commands
 function kitty-light {
     kitty @ set_colors --configured -a $HOME/.config/kitty/kitty-themes/themes/PencilLight.conf
-    alias cat='bat --theme ansi-light --style=plain'
 }
 
 function kitty-dark {
     kitty @ set_colors --configured -a $HOME/.config/kitty/kitty-themes/themes/OneDark.conf
-    alias cat='bat --theme ansi-dark --style=plain'
 }
 
 # Builtin overrides (and most of these also work on Windows).
@@ -156,11 +154,6 @@ fi
 if [ -x "$(command -v dust)" ]; then
     # cargo install du-dust
     alias du=dust
-fi
-
-if [ -x "$(command -v bat)" ]; then
-    # cargo install bat
-    alias cat='bat --theme ansi-dark --style=plain'
 fi
 
 if [ -x "$(command -v tokei)" ]; then

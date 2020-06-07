@@ -1,8 +1,8 @@
 ;; NOTE: you may need to run M-x package-list-packages before they can
 ;; be found.
 
-;; Load zshrc paths.
-(let ((path (shell-command-to-string ". ~/.zshrc; echo -n $PATH")))
+;; Load bashrc paths.
+(let ((path (shell-command-to-string ". ~/.bashrc; echo -n $PATH")))
   (setenv "PATH" path)
   (setq exec-path 
         (append
@@ -65,6 +65,9 @@
     jedi
 
     haskell-mode
+
+    org
+    org-roam
 
     ;; Clojure
     clojure-mode
@@ -212,3 +215,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+
+
+;; Org Roam Setup
+(make-directory "~/Sync/org-roam")
+(setq org-roam-directory "~/Sync/org-roam")
+(add-hook 'after-init-hook 'org-roam-mode)
