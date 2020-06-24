@@ -134,7 +134,9 @@ alias git-prune-local='git branch --merged | egrep -v "(^\*|master|dev)" | xargs
 alias ssh-kilvin='ssh kilvin.farmvision.io'
 alias ssh-kvothe='ssh kilvin.farmvision.io -p 8004'
 alias ssh-joestar='ssh 67.205.137.3'
+alias ssh-joestar-syncthing='echo "visit localhost:8385" && ssh -L 8385:localhost:8384 67.205.137.3'
 alias ssh-garden='ssh pi@botanist.dev'
+
 
 # kitty commands
 function kitty-light {
