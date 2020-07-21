@@ -186,5 +186,3 @@ if [ -x "$(command -v starship)" ]; then
 fi
 
 
-# Source nix commands (should check if nix is installed).
-. ~/.nix-profile/etc/profile.d/nix.sh
