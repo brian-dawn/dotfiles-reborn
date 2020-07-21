@@ -184,3 +184,7 @@ fi
 if [ -x "$(command -v starship)" ]; then
     eval "$(starship init bash)"
 fi
+
+
+# Source nix commands (should check if nix is installed).
+. ~/.nix-profile/etc/profile.d/nix.sh
