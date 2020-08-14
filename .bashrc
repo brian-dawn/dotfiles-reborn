@@ -125,6 +125,12 @@ esac
 alias gg='git log --oneline --graph'
 alias gs='git status'
 alias gco='git checkout'
+if [ -f "/usr/share/bash-completion/completions/git" ]; then
+  source /usr/share/bash-completion/completions/git
+  __git_complete gco _git_checkout
+else
+  echo "Error loading git completions"
+fi
 # Git current commit hash.
 alias gh='git rev-parse HEAD'
 alias git-fuck-it='git clean -d -X -f; git reset --hard'
