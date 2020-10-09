@@ -3,7 +3,7 @@ disabled = true
 
 [character]
 symbol = "何"
-success_symbol = "何"
+success_symbol = "[何](bold green)"
 
 [aws]
 disabled = true
