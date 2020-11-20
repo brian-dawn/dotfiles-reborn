@@ -145,6 +145,7 @@ alias ssh-joestar='ssh 67.205.137.3'
 alias ssh-joestar-syncthing='echo "visit localhost:8385" && ssh -L 8385:localhost:8384 67.205.137.3'
 alias ssh-garden='ssh pi@botanist.dev'
 
+alias wslreboot='history -a && cmd.exe /C wsl --shutdown'
 
 # kitty commands
 function kitty-light {
@@ -193,4 +194,5 @@ if [ -x "$(command -v starship)" ]; then
     eval "$(starship init bash)"
 fi
 
-
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin
