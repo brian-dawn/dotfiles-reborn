@@ -34,7 +34,6 @@ export PKG_CONFIG_PATH="/usr/X11/lib/pkgconfig"
 export SHELL=/bin/bash
 
 export PATH=$HOME/.local/bin:$PATH
-export PATH=$PATH:~/.bin
 export PATH=/usr/local/bin:$PATH
 
 # Python
