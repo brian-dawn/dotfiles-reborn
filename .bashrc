@@ -32,6 +32,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles-repo/ --work-tree=$HOME'
 export TERM=xterm-256color
 export PKG_CONFIG_PATH="/usr/X11/lib/pkgconfig"
 export SHELL=/bin/bash
+export CLOUDSDK_PYTHON=/usr/bin/python
 
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$PATH:~/.bin
@@ -140,9 +141,8 @@ alias git-prune-local='git branch --merged | egrep -v "(^\*|master|dev)" | xargs
 alias ssh-kilvin='ssh kilvin.farmvision.io'
 alias ssh-kvothe='ssh kilvin.farmvision.io -p 8004'
 
-alias mosh-joestar='mosh 67.205.137.3'
-alias ssh-joestar='ssh 67.205.137.3'
-alias ssh-joestar-syncthing='echo "visit localhost:8385" && ssh -L 8385:localhost:8384 67.205.137.3'
+alias ssh-kaisa='ssh 104.131.83.148'
+alias ssh-kaisa-syncthing='echo "visit localhost:8386" && ssh -L 8386:localhost:8384 104.131.83.148'
 alias ssh-garden='ssh pi@botanist.dev'
 
 alias wslreboot='history -a && cmd.exe /C wsl --shutdown'
@@ -196,3 +196,8 @@ fi
 
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
+
+. $HOME/.nix-profile/etc/profile.d/nix.sh
+
+export DENO_INSTALL="/home/brian/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
